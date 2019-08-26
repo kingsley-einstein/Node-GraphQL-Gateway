@@ -1,0 +1,35 @@
+{
+  "name": "node-graphql-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "if exist ./dist rmdir /s /q dist && mkdir dist",
+    "build": "babel ./ -d dist --ignore node_modules",
+    "babel-build": "npm run clean && npm run build",
+    "prettify": "prettier-eslint */**/**.{js,json} --write",
+    "start": "node dist/index.js",
+    "start:babel": "nodemon --exec babel-node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cloud-config-client": "^1.4.2",
+    "eureka-js-client": "^4.5.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "feignjs": "0.0.6",
+    "feignjs-request": "0.0.6",
+    "graphql": "^14.4.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0"
+  }
+}
